@@ -8,7 +8,7 @@ import Profile from './pages/dashboard/profile'
 
 function App() {
 	return (
-		<main className="px-10 w-full">
+		<main className="w-full">
 			<BrowserRouter>
 				<Navbar />
 				<Routes>
