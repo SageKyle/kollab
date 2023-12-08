@@ -1,3 +1,4 @@
+import Footer from '../components/Footer'
 import Benefit from '../components/home/Benefit'
 import CTA from '../components/home/CTA'
 import Features from '../components/home/Features'
@@ -10,6 +11,7 @@ export default function Home() {
 			<Benefit />
 			<Features />
 			<CTA />
+			<Footer />
 		</section>
 	)
 }
