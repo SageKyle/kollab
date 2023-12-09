@@ -1,10 +1,18 @@
+import { useState } from 'react'
 import { CiLock } from 'react-icons/ci'
 import { HiOutlineMail } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 
 export default function Login() {
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+
+	async function handleSubmit() {
+		console.log('login successful')
+	}
+
 	return (
-		<section className="w-full min-h-screen place-content-center grid grid-cols-1 lg:grid-cols-[40%_auto] relative">
+		<section className="w-full min-h-screen place-content-center grid grid-cols-1 lg:grid-cols-[40%_auto] lg:place-content-stretch relative">
 			<article className="hidden lg:flex lg:flex-col w-full h-full px-10 items-start justify-center bg-primary text-white">
 				<h1 className="font-bold text-3xl mb-6">Kollab</h1>
 				<p className="text-sm text-slate-300 font-mont font-extralight">
@@ -12,7 +20,10 @@ export default function Login() {
 					corporis accusantium nesciunt error perspiciatis! Ipsum fuga fugit.
 				</p>
 			</article>
-			<form className="w-full px-10 py-10 bg-white sm:px-20 lg:my-auto">
+			<form
+				onSubmit={handleSubmit}
+				className="w-full px-10 py-10 bg-white sm:px-20 lg:my-auto"
+			>
 				<h1 className="font-bold text-3xl mb-12 capitalize  text-primary absolute top-6 left-10 lg:hidden">
 					kollab
 				</h1>
@@ -27,9 +38,11 @@ export default function Login() {
 						type="email"
 						name="email"
 						id="email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 						required
 						title="Email Address"
-						className="border-0 outline-none border-b border-primary w-full focus:border-2 focus:outline-none "
+						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
 					/>
 				</label>
 				<label className="w-full flex flex-col gap-1">
@@ -40,9 +53,11 @@ export default function Login() {
 						type="password"
 						name="password"
 						id="password"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
 						required
 						title="Password"
-						className="border-0 outline-none border-b border-primary w-full focus:border-2 focus:outline-none "
+						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
 					/>
 				</label>
 				<Link
