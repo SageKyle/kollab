@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
 	return (
-		<header className="w-full py-6 px-20 flex items-center justify-between gap-4 bg-white">
+		<header className="w-full py-6 px-20 flex items-center justify-between gap-4 bg-white z-30 relative">
 			<h1
 				className="inline-block capitalize font-semibold text-2xl text-primary"
 				title="Kollab"
