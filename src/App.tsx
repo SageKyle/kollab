@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -13,15 +14,18 @@ function App() {
 	const notIndex = location.pathname !== '/'
 
 	return (
-		<main className="w-full relative">
+		<main className="w-full bg-slate-50 relative min-h-screen">
 			<BrowserRouter>
-				{user && notIndex && <Sidebar />}
-				<Routes>
-					<Route path="/" element={<Home />} />
-					{!user && <Route path="/login" element={<Login />} />}
-					{!user && <Route path="/register" element={<Register />} />}
-					<Route path="/dashboard/profile" element={<Profile />} />
-				</Routes>
+				{user && notIndex && <Navbar />}
+				<div className="w-full lg:p-10 lg:gap-4 lg:grid lg:grid-cols-[max-content_auto] relative">
+					{user && notIndex && <Sidebar />}
+					<Routes>
+						<Route path="/" element={<Home />} />
+						{!user && <Route path="/login" element={<Login />} />}
+						{!user && <Route path="/register" element={<Register />} />}
+						<Route path="/dashboard/profile" element={<Profile />} />
+					</Routes>
+				</div>
 			</BrowserRouter>
 		</main>
 	)
