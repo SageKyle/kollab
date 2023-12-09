@@ -17,7 +17,7 @@ function App() {
 		<main className="w-full bg-slate-50 relative min-h-screen">
 			<BrowserRouter>
 				{user && notIndex && <Navbar />}
-				<div className="w-full lg:p-10 lg:gap-4 lg:grid lg:grid-cols-[max-content_auto] relative">
+				<div className="w-full lg:gap-4 lg:flex relative">
 					{user && notIndex && <Sidebar />}
 					<Routes>
 						<Route path="/" element={<Home />} />

@@ -22,7 +22,7 @@ export default function Login() {
 			</article>
 			<form
 				onSubmit={handleSubmit}
-				className="w-full px-10 py-10 bg-white sm:px-20 lg:my-auto"
+				className="w-full px-10 py-10 sm:px-20 lg:my-auto"
 			>
 				<h1 className="font-bold text-3xl mb-12 capitalize  text-primary absolute top-6 left-10 lg:hidden">
 					kollab
@@ -42,7 +42,7 @@ export default function Login() {
 						onChange={(e) => setEmail(e.target.value)}
 						required
 						title="Email Address"
-						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
+						className="border-0 outline-none border-b border-primary w-full bg-transparent focus:border-b-2 focus:outline-none "
 					/>
 				</label>
 				<label className="w-full flex flex-col gap-1">
@@ -57,7 +57,7 @@ export default function Login() {
 						onChange={(e) => setPassword(e.target.value)}
 						required
 						title="Password"
-						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
+						className="border-0 outline-none bg-transparent border-b border-primary w-full focus:border-b-2 focus:outline-none "
 					/>
 				</label>
 				<Link

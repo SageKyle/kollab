@@ -27,7 +27,7 @@ export default function Register() {
 			</article>
 			<form
 				onSubmit={handleSubmit}
-				className="w-full px-10 py-10 bg-white sm:px-20 lg:my-auto lg:w-7/12 lg:ml-auto"
+				className="w-full px-10 py-10 sm:px-20 lg:my-auto lg:w-7/12 lg:ml-auto"
 			>
 				<h1 className="font-bold text-3xl mb-12 capitalize  text-primary absolute top-6 left-10 lg:hidden">
 					kollab
@@ -46,7 +46,7 @@ export default function Register() {
 						required
 						autoComplete="on"
 						title="First Name"
-						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
+						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none bg-transparent"
 					/>
 				</label>
 				<label className="w-full flex flex-col mb-8 gap-1">
@@ -59,7 +59,7 @@ export default function Register() {
 						id="lastName"
 						autoComplete="on"
 						title="Last Name"
-						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
+						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none bg-transparent"
 					/>
 				</label>
 				<label className="w-full flex flex-col mb-8 gap-1">
@@ -75,7 +75,7 @@ export default function Register() {
 						required
 						autoComplete="on"
 						title="Email Address"
-						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
+						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none bg-transparent"
 					/>
 				</label>
 				<label className="w-full flex flex-col mb-8 gap-1">
@@ -89,7 +89,7 @@ export default function Register() {
 						required
 						autoComplete="off"
 						title="Username"
-						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
+						className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none bg-transparent"
 					/>
 				</label>
 				<label className="w-full flex flex-col gap-1">
@@ -106,7 +106,7 @@ export default function Register() {
 							required
 							autoComplete="off"
 							title="Password"
-							className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none "
+							className="border-0 outline-none border-b border-primary w-full focus:border-b-2 focus:outline-none bg-transparent"
 						/>
 						<span
 							onClick={toggleShowPassword}
