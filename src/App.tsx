@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Requests from './pages/dashboard/Requests'
 import Profile from './pages/dashboard/profile'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 						{!user && <Route path="/login" element={<Login />} />}
 						{!user && <Route path="/register" element={<Register />} />}
 						<Route path="/dashboard/profile" element={<Profile />} />
+						<Route path="/dashboard/requests" element={<Requests />} />
 					</Routes>
 				</div>
 			</BrowserRouter>
