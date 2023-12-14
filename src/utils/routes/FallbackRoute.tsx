@@ -13,7 +13,7 @@ export default function FallbackRoute() {
 			<h1 className="text-3xl font-bold lg:text-5xl my-8">404</h1>
 			<h3>Oops! The page you're looking for cannot be found.</h3>
 			<Link
-				to={'/dashboard/profile'}
+				to={'/dashboard/home'}
 				className="bg-primary text-white px-4 py-2 rounded-md flex items-center hover:gap-2 hover:bg-primary-light ease-in-out origin-right duration-500 mt-2"
 			>
 				<FaArrowLeft /> Back to home

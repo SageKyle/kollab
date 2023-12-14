@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Requests from './pages/dashboard/Requests'
+import Dashboard from './pages/dashboard/home'
 import Profile from './pages/dashboard/profile'
 import FallbackRoute from './utils/routes/FallbackRoute'
 import LoginRoute from './utils/routes/LoginRoute'
@@ -38,6 +39,13 @@ function App() {
 							{<Route path="/register" element={<Register />} />}
 						</Route>
 						<Route
+							path="/dashboard/home"
+							element={<ProtectedRoute user={user} />}
+						>
+							<Route path="/dashboard/home" element={<Dashboard />} />
+						</Route>
+
+						<Route
 							path="/dashboard/profile"
 							element={<ProtectedRoute user={user} />}
 						>
@@ -49,6 +57,7 @@ function App() {
 						>
 							<Route path="/dashboard/requests" element={<Requests />} />
 						</Route>
+
 						<Route path="*" element={<FallbackRoute />} />
 					</Routes>
 				</div>
