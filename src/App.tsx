@@ -8,9 +8,12 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Requests from './pages/dashboard/Requests'
 import Profile from './pages/dashboard/profile'
+import FallbackRoute from './utils/routes/FallbackRoute'
+import LoginRoute from './utils/routes/LoginRoute'
+import ProtectedRoute from './utils/routes/ProtectedRoute'
 
 function App() {
-	const [user] = useState(false)
+	const [user] = useState(true)
 	const location = window.location
 	const notIndex = location.pathname !== '/'
 
@@ -26,10 +29,27 @@ function App() {
 					{user && notIndex && <Sidebar />}
 					<Routes>
 						<Route path="/" element={<Home />} />
-						{!user && <Route path="/login" element={<Login />} />}
-						{!user && <Route path="/register" element={<Register />} />}
-						<Route path="/dashboard/profile" element={<Profile />} />
-						<Route path="/dashboard/requests" element={<Requests />} />
+
+						<Route path="/login" element={<LoginRoute user={user} />}>
+							<Route path="/login" element={<Login />} />
+						</Route>
+
+						<Route path="/register" element={<LoginRoute user={user} />}>
+							{<Route path="/register" element={<Register />} />}
+						</Route>
+						<Route
+							path="/dashboard/profile"
+							element={<ProtectedRoute user={user} />}
+						>
+							<Route path="/dashboard/profile" element={<Profile />} />
+						</Route>
+						<Route
+							path="/dashboard/requests"
+							element={<ProtectedRoute user={user} />}
+						>
+							<Route path="/dashboard/requests" element={<Requests />} />
+						</Route>
+						<Route path="*" element={<FallbackRoute />} />
 					</Routes>
 				</div>
 			</BrowserRouter>
