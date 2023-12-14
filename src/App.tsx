@@ -10,7 +10,7 @@ import Requests from './pages/dashboard/Requests'
 import Profile from './pages/dashboard/profile'
 
 function App() {
-	const [user] = useState(true)
+	const [user] = useState(false)
 	const location = window.location
 	const notIndex = location.pathname !== '/'
 
@@ -18,7 +18,11 @@ function App() {
 		<main className="w-full bg-slate-50 relative min-h-screen">
 			<BrowserRouter>
 				{user && notIndex && <Navbar />}
-				<div className="w-full lg:gap-4 lg:flex relative">
+				<div
+					className={`w-full lg:gap-4 lg:flex relative ${
+						notIndex ? 'flex-row' : 'flex-col'
+					}`}
+				>
 					{user && notIndex && <Sidebar />}
 					<Routes>
 						<Route path="/" element={<Home />} />
