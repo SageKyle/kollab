@@ -1,12 +1,15 @@
-export interface userType {
+type UserType = {
 	firstName: string
 	lastName: string
 	username: string
 	email: string
 	avatar?: string
+	workspaces: []
+	requests: []
+	id: string
 }
 
-export interface requestType {
+type requestType = {
 	name: string
 	url: string
 	type: 'sent' | 'received'

@@ -2,14 +2,16 @@ import { useState } from 'react'
 import { RiAddCircleFill } from 'react-icons/ri'
 import profileAvatar from '../../assets/icons/user.svg'
 import UploadAvatar from '../../components/UploadAvatar'
-import { userType } from '../../lib/types'
 
-const sampleUser: userType = {
+const sampleUser: UserType = {
 	firstName: 'John',
 	lastName: 'Doe',
 	email: 'johndoe@email.com',
 	username: 'johnny',
 	avatar: profileAvatar,
+	id: '3434xdf',
+	workspaces: [],
+	requests: [],
 }
 
 export default function Profile() {
