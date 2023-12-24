@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import { useAuthContext } from './hooks/useAuthContext'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -14,7 +14,7 @@ import LoginRoute from './utils/routes/LoginRoute'
 import ProtectedRoute from './utils/routes/ProtectedRoute'
 
 function App() {
-	const [user] = useState(true)
+	const { user } = useAuthContext()
 	const location = window.location
 	const notIndex = location.pathname !== '/'
 

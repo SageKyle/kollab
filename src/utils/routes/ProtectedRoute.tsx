@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
 interface iProp {
-	user: boolean
+	user: UserType | null
 }
 
 export default function ProtectedRoute({ user }: iProp) {
